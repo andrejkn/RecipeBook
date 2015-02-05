@@ -4,14 +4,25 @@
  "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd"> 
 
 <hibernate-mapping>
-   <class name="com.andrejkn.recipe_book.models.Recipe" table="recipe">
-      <meta attribute="class-description">
-         This class contains the recipe detail. 
-      </meta>
-      <id name="id" type="int" column="id">
-         <generator class="native"/>
-      </id>
-      <property name="title" column="title" type="string"/>
-      <property name="description" column="description" type="string"/>
-   </class>
+	<class name="com.andrejkn.recipe_book.models.Recipe" table="recipe">
+		<meta attribute="class-description">
+			This class contains the recipe detail. 
+		</meta>
+		<id name="id" type="int" column="id">
+			<generator class="native"/>
+		</id>
+		<property name="title" column="title" type="string" not-null="true"/>
+		<property name="description" column="description" type="string"/>
+	</class>
+   
+	<class name="com.andrejkn.recipe_book.models.Nutrient" table="nutrient">
+		<meta attribute="class-description">
+			Nutrient class will be used to hold nutrient details.
+		</meta>
+		<id name="id" type="int" column="id">
+			<generator class="native"/>
+		</id>
+		<property name="nutrientType" column="nutrient_type" type="com.andrejkn.recipe_book.NutritionTypeEnumUserType"/>
+		<property name="amountInGrams" column="amount_in_grams" type="double"/>
+	</class>
 </hibernate-mapping>

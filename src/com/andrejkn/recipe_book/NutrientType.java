@@ -5,7 +5,7 @@ public enum NutrientType {
 	PROTEIN(3),
 	CARBOHYDRATE(2);
 	
-	private final int caloriesPerGram;
+	public final int caloriesPerGram;
 	
 	NutrientType(int calories) {
 		this.caloriesPerGram = calories;
